@@ -1,4 +1,4 @@
-
+package Armes;
 
 public class Hammer extends Weapon {
 

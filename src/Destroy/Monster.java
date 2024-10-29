@@ -1,4 +1,4 @@
-
+package Destroy;
 
 public class Monster extends Destructible {
 

@@ -1,4 +1,4 @@
-
+package Armes;
 
 public class Axe extends Weapon {
 

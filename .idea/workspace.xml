@@ -5,21 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c29d6441-6d2a-4fd6-b604-4ce56621c3e5" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RpgWeaponStore.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Axe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Bow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Destructible.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Hammer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Monster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Obstacle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Weapon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/WeaponStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Map/GameMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Personnage/Archer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Personnage/Character.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Personnage/Guerrier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Personnage/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Axe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Armes/Axe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Armes/Bow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Destructible.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Destroy/Destructible.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Hammer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Armes/Hammer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Destroy/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Obstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Destroy/Obstacle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Armes/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WeaponStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Armes/WeaponStore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +38,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "SMaitriya"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/SMaitriya/RPG-PROJECT.git",
+    "accountId": "85039fa4-b672-4ad7-b158-9417c5ac12b5"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -49,13 +63,27 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Game.executor": "Run",
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\maitr\Desktop\sorbonne\java\RpgWeaponStore\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Game">
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Game" />
+      <module name="RpgWeaponStore" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="RpgWeaponStore" />
@@ -65,6 +93,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Game" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -79,6 +108,17 @@
       <updated>1728296832898</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />

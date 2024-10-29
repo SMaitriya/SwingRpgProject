@@ -1,3 +1,5 @@
+package Armes;
+import Destroy.*;
 
 public abstract class Weapon {
 
@@ -36,7 +38,7 @@ public abstract class Weapon {
 
     @Override
     public String toString() {
-        return this.name + " - damage = " + this.damage + " - prix = " + this.price + "$";
+        return this.name + " - damage = " + this.damage + " - prix = " + this.price + " gold";
     }
 
     @Override

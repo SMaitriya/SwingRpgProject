@@ -1,3 +1,6 @@
+package Destroy;
+
+
 public class Destructible {
 
     protected double health;

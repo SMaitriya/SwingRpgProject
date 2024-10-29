@@ -1,4 +1,4 @@
-
+package Armes;
 
 public class Bow extends Weapon {
 
