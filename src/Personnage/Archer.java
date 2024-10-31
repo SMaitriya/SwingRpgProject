@@ -6,10 +6,17 @@ public class Archer extends Character {
     private static final double SPECIAL_DAMAGE = 25;
     private double arrows = 10;
 
-    public Archer(String name, double health, double arrows) {
-        super(name, health);
+    public Archer(String name, double health, String characterClass, double arrows) {
+        super(name, health, characterClass);
         this.arrows = arrows;
     }
+
+    @Override
+    public String asciiArt() {
+        return "🏹 Archer " + getName();
+    }
+
+
 
     @Override
     public void specialAttack(Destructible target) {

@@ -1,65 +1,71 @@
-import Destroy.Destructible;
-import Map.GameMap;
 import Armes.WeaponStore;
+import Personnage.Archer;
 import Personnage.Character;
+import Personnage.Mage;
+import Personnage.Warrior;
+import Personnage.Classes;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class Game {
-
-    public static void main(String[] args) throws CloneNotSupportedException {
-
+    public static void main(String[] args) {
+        // Créer un scanner pour la saisie utilisateur
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Choose a name: ");
+
+        // Demander le nom de l'utilisateur
+        System.out.print("Please enter a name for your character: ");
         String name = scanner.nextLine();
 
-        // Crée un personnage avec un nom et des caractéristiques initiales
-        Character player = new Character(name, 100) {
-            @Override
-            public void specialAttack(Destructible target) {
+        // Afficher le nom choisi par l'utilisateur
+        System.out.println("You have chosen the name: " + name);
 
+        // Obtenir la liste des classes de personnages disponibles
+        List<Character> characterClasses = Classes.getClasses(); // Correction du nom de méthode
+
+        // Appeler la méthode pour afficher les classes
+        Classes.printClasses(characterClasses);
+
+        Character chosenCharacter = null;
+        while (chosenCharacter == null) {
+            System.out.print("\nEnter the number of your chosen class: ");
+            int choice = scanner.nextInt();
+            if (choice >= 0 && choice < characterClasses.size()) {
+                Character selectedCharacter = characterClasses.get(choice);
+                if (selectedCharacter instanceof Warrior) {
+                    chosenCharacter = new Warrior(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 50); // Exemple d'or
+                } else if (selectedCharacter instanceof Mage) {
+                    chosenCharacter = new Mage(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 100); // Exemple d'or
+                } else if (selectedCharacter instanceof Archer) {
+                    chosenCharacter = new Archer(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 10); // Exemple d'or
+                }
+            } else {
+                System.out.println("Invalid choice, please try again.");
             }
-        };
-
-        System.out.println("Welcome, " + player.getName() + "!");
-
-
-        Character class = new Character()
-
-
-
-
-
-
-
-        WeaponStore store = new WeaponStore();
-        store.printWeapons();
-
-
-        // Créez la carte
-        GameMap gameMap = new GameMap(5, 5); // Crée une carte de 5x5
-
-        // Boucle principale du jeu
-        boolean running = true;
-        while (running) {
-            gameMap.displayMap(); // Affiche la carte
-
-            String currentTile = gameMap.getCurrentTile();
-            if (currentTile.equals("E")) {
-                System.out.println("Vous avez atteint la sortie ! Vous gagnez !");
-                break;
-            } else if (currentTile.equals("M")) {
-                System.out.println("Vous avez rencontré un monstre !");
-                // Ajoutez votre logique de combat ici
-            } else if (currentTile.equals("O")) {
-                System.out.println("Vous êtes bloqué par un obstacle !");
-                // Logique pour détruire l'obstacle peut être ajoutée ici
-            }
-
-            System.out.print("Entrez une direction (haut, bas, gauche, droite): ");
-            String direction = scanner.nextLine();
-            gameMap.movePlayer(direction);
         }
 
-        scanner.close(); // Ferme le scanner à la fin
+        chosenCharacter.addGold(10);
+
+        // Afficher la classe choisie par le joueur
+        System.out.println("\nWelcome to the game " + name + " the " + chosenCharacter.getClass().getSimpleName() + " and you have " + chosenCharacter.getGold() + " golds !");
+
+        System.out.println(chosenCharacter.toString());
+        // Créer un magasin d'armes
+        WeaponStore weaponStore = new WeaponStore();
+
+      // Afficher les armes disponibles pour la classe du personnage
+        weaponStore.printWeapons(chosenCharacter);
+
+        System.out.println("Enter the number of the weapon you want to buy ");
+
+        int choice = scanner.nextInt();
+        if (choice >= 0 && weaponStore.getWeapons().size() < choice) {
+
+        }
+
+
+
+        // Fermer le scanner pour éviter les fuites de ressources
+        scanner.close();
     }
 }

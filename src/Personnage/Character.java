@@ -2,29 +2,49 @@ package Personnage;
 
 import Destroy.Destructible;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Character {
     private String name;
     protected double health;
-    protected String CharacterClass;
+    protected String characterClass;
+    private double gold;
 
-
-
-    public Character(String name, double health, String CharacterClass) {
+    public Character(String name, double health, String characterClass) {
         this.name = name;
         this.health = health;
-        this.CharacterClass = CharacterClass;
+        this.characterClass = characterClass;
+        this.gold = 0;
+    }
+
+    public double getGold() {
+        return gold;
+    }
+
+    public void addGold(double amount) {
+        this.gold += amount;
+    }
+
+    public void spendGold(double amount) {
+        if (amount <= gold) {
+            this.gold -= amount;
+        }
+        else {
+            System.out.println("Not enough gold !");
+        }
     }
 
     public String getCharacterClass() {
-        return CharacterClass;
+        return characterClass;
     }
 
     public String getName() {
         return name;
     }
 
-    public String setName(String newName){
-        return this.name = newName;
+    public void setName(String newName) {
+        this.name = newName;
     }
 
     public double getHealth() {
@@ -35,14 +55,14 @@ public abstract class Character {
         health -= damage;
     }
 
+
     @Override
     public String toString() {
-        return "Character{name='" + name + "', health=" + health + "}";
+        return  name + " has "+  health + " HP" + " and " + gold + " golds";
     }
 
     public abstract void specialAttack(Destructible target);
     public abstract String asciiArt();
-
 
 
 

@@ -3,12 +3,19 @@ package Personnage;
 import Destroy.Destructible;
 
 public class Mage extends Character{
+
     private double mana;
 
-    public Mage(String name, double health, double mana) {
-        super(name, health);
+    public Mage(String name, double health, String characterClass, double mana) {
+        super(name, health, characterClass);
         this.mana = mana;
     }
+
+    @Override
+    public String asciiArt() {
+        return "🧙 Mage " + getName();
+    }
+
 
 
 

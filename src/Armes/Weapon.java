@@ -38,7 +38,7 @@ public abstract class Weapon {
 
     @Override
     public String toString() {
-        return this.name + " - damage = " + this.damage + " - prix = " + this.price + " gold";
+        return this.name + " - damage = " + this.damage + " - price = " + this.price + " gold";
     }
 
     @Override
