@@ -1,5 +1,6 @@
 package Personnage;
 
+import Armes.Weapon;
 import Destroy.Destructible;
 
 import java.util.ArrayList;
@@ -10,12 +11,37 @@ public abstract class Character {
     protected double health;
     protected String characterClass;
     private double gold;
+    private Weapon equippedWeapon;
+
+
 
     public Character(String name, double health, String characterClass) {
         this.name = name;
         this.health = health;
         this.characterClass = characterClass;
         this.gold = 0;
+        this.equippedWeapon = null;
+    }
+
+    public void buyWeapon(Weapon weapon) {
+        if (this.gold > weapon.getPrice()) {
+            this.spendGold(weapon.getPrice());
+            this.setEquippedWeapon(weapon);  // Équipe l'arme après achat
+            System.out.println("You have successfully bought: " + weapon.getName());
+        }
+        else {
+            System.out.println("You don't have enough gold for " + weapon.getName());
+
+        }
+
+    }
+
+    public Weapon getEquippedWeapon() {
+        return equippedWeapon;
+    }
+
+    public void setEquippedWeapon(Weapon weapon) {
+        this.equippedWeapon = weapon;
     }
 
     public double getGold() {

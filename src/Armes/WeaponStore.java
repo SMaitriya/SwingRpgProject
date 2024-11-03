@@ -21,16 +21,21 @@ public class WeaponStore {
         return this.weapons;
     }
 
+
+    public ArrayList<Weapon> getWeaponsForClass(Character character) {
+        return this.getAvailableWeapons(character);
+    }
+
     public void printWeapons(Character character) {
-        int i = 0;
         ArrayList<Weapon> availableWeapons = getAvailableWeapons(character);
         if (availableWeapons.isEmpty()) {
             System.out.println("No weapons available for your class.");
             return;
         }
-        for (Weapon w : availableWeapons) {
+
+        for (int i = 0; i < availableWeapons.size(); i++) {
+            Weapon w = availableWeapons.get(i);
             System.out.println("[" + i + "] " + w.toString() + "\n" + w.asciiArt());
-            i++;
         }
     }
 

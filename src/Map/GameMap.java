@@ -1,45 +1,48 @@
 package Map;
 
 public class GameMap {
-    private String[][] map;
+    private String[][] map;          // Carte pour affichage
+    private String[][] referenceMap;  // Carte de référence
     private int playerX;
     private int playerY;
 
     public GameMap(int width, int height) {
         map = new String[height][width];
+        referenceMap = new String[height][width];
         initializeMap();
         playerX = 0; // Position de départ du joueur
         playerY = 0; // Position de départ du joueur
     }
 
     private void initializeMap() {
-        // Remplir la carte avec des éléments
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[i].length; j++) {
                 if (i == map.length - 1 && j == map[i].length - 1) {
-                    map[i][j] = "E"; // E pour la sortie
+                    referenceMap[i][j] = "E"; // E pour la sortie
                 } else if (Math.random() < 0.2) {
-                    map[i][j] = "M"; // M pour les monstres
+                    referenceMap[i][j] = "M"; // M pour les monstres
                 } else if (Math.random() < 0.1) {
-                    map[i][j] = "O"; // O pour les obstacles
+                    referenceMap[i][j] = "O"; // O pour les obstacles
                 } else {
-                    map[i][j] = "."; // . pour un espace vide
+                    referenceMap[i][j] = "."; // . pour un espace vide
                 }
             }
         }
-        map[playerY][playerX] = "P"; // P pour la position du joueur
     }
 
     public void displayMap() {
-        // Afficher la carte avec des séparateurs
+        // Afficher la carte avec la position du joueur superposée
         for (int i = 0; i < map.length; i++) {
-            System.out.print(" | "); // Espace pour les séparateurs
-            for (String tile : map[i]) {
-                System.out.print(tile + " | "); // Afficher la tuile avec des séparateurs
+            System.out.print(" | ");
+            for (int j = 0; j < map[i].length; j++) {
+                if (i == playerY && j == playerX) {
+                    System.out.print("P | "); // Afficher "P" pour la position du joueur
+                } else {
+                    System.out.print(referenceMap[i][j] + " | "); // Afficher le contenu de la carte de référence
+                }
             }
-            System.out.println(); // Nouvelle ligne
+            System.out.println();
 
-            // Afficher la ligne de séparation
             System.out.print("   ");
             for (int j = 0; j < map[0].length; j++) {
                 System.out.print("---"); // Ligne de séparation
@@ -49,7 +52,8 @@ public class GameMap {
     }
 
     public boolean movePlayer(String direction) {
-        map[playerY][playerX] = "."; // Efface la position actuelle du joueur
+        System.out.println("Current position before moving: (" + playerX + ", " + playerY + ")");
+
         switch (direction.toLowerCase()) {
             case "up":
                 if (playerY > 0) playerY--;
@@ -64,14 +68,14 @@ public class GameMap {
                 if (playerX < map[0].length - 1) playerX++;
                 break;
             default:
-                System.out.println("Direction invalide.");
+                System.out.println("Invalid direction.");
                 return false;
         }
-        map[playerY][playerX] = "P"; // Met à jour la position du joueur
+
         return true;
     }
 
     public String getCurrentTile() {
-        return map[playerY][playerX];
+        return referenceMap[playerY][playerX];
     }
 }

@@ -1,18 +1,21 @@
 package Destroy;
 
+public abstract class Destructible {
+    private double health;
 
-public class Destructible {
-
-    protected double health;
-
-    public Destructible(double h) {
-
-        this.health = h;
+    public Destructible(double health) {
+        this.health = health;
     }
 
-    public void hit(double d) {
-
-        this.health -= d;
+    public double getHealth() {
+        return health;
     }
 
+    public void hit(double damage) {
+        health -= damage;
+        if (health < 0) {
+            health = 0;
+        }
+        System.out.println("Received damage: " + damage + ". Current health: " + health);
+    }
 }

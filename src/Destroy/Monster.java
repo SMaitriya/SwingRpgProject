@@ -9,4 +9,5 @@ public class Monster extends Destructible {
         super(LIFE);
     }
 
+
 }

@@ -1,4 +1,6 @@
+import Armes.Weapon;
 import Armes.WeaponStore;
+import Map.GameMap;
 import Personnage.Archer;
 import Personnage.Character;
 import Personnage.Mage;
@@ -44,7 +46,7 @@ public class Game {
             }
         }
 
-        chosenCharacter.addGold(10);
+        chosenCharacter.addGold(15);
 
         // Afficher la classe choisie par le joueur
         System.out.println("\nWelcome to the game " + name + " the " + chosenCharacter.getClass().getSimpleName() + " and you have " + chosenCharacter.getGold() + " golds !");
@@ -53,17 +55,69 @@ public class Game {
         // Créer un magasin d'armes
         WeaponStore weaponStore = new WeaponStore();
 
-      // Afficher les armes disponibles pour la classe du personnage
+        // Afficher les armes disponibles pour la classe du personnage
         weaponStore.printWeapons(chosenCharacter);
 
-        System.out.println("Enter the number of the weapon you want to buy ");
 
-        int choice = scanner.nextInt();
-        if (choice >= 0 && weaponStore.getWeapons().size() < choice) {
 
+
+
+        while (chosenCharacter.getEquippedWeapon() == null) {
+            System.out.print("Enter the number of the weapon you want to buy: ");
+            int weaponChoice = scanner.nextInt();
+
+            if (weaponChoice >= 0 && weaponChoice < weaponStore.getWeaponsForClass(chosenCharacter).size()) {
+                Weapon selectedWeapon = weaponStore.getWeaponsForClass(chosenCharacter).get(weaponChoice);
+
+                chosenCharacter.buyWeapon(selectedWeapon); // L'arme est achetée ici
+            } else {
+                System.out.println("Invalid choice.");
+            }
         }
 
 
+        // Vérifiez l'arme équipée
+        if (chosenCharacter.getEquippedWeapon() != null) {
+            System.out.println("Currently equipped weapon: " + chosenCharacter.getEquippedWeapon());
+        }
+        // Initialiser la carte du jeu
+        GameMap gameMap = new GameMap(5, 5); // Exemple de taille de carte
+        System.out.println("Map initialized. Here is your starting position:");
+        gameMap.displayMap(); // Afficher la carte initiale
+
+// Boucle de déplacement sur la carte
+        String direction;
+        while (true) {
+            System.out.print("Enter direction to move (up, down, left, right) or 'exit' to quit: ");
+            direction = scanner.next();
+
+            if (direction.equalsIgnoreCase("exit")) {
+                System.out.println("Exiting the game. Thanks for playing!");
+                break;
+            }
+
+            // Effectuer le mouvement et afficher le résultat
+            if (gameMap.movePlayer(direction)) {
+                System.out.println("Moved " + direction + ".");
+            } else {
+                System.out.println("Cannot move in that direction.");
+            }
+
+            gameMap.displayMap(); // Afficher la carte après le mouvement
+
+            // Vérifier le contenu de la case actuelle
+            String currentTile = gameMap.getCurrentTile();
+            if (currentTile.equals("M")) {
+                System.out.println("You encountered a monster!");
+
+            } else if (currentTile.equals("O")) {
+                System.out.println("There is an obstacle in the way.");
+                // Logique de gestion des obstacles (à ajouter)
+            } else if (currentTile.equals("E")) {
+                System.out.println("Congratulations, you've reached the exit!");
+                break; // Terminer la boucle car le joueur a atteint la sortie
+            }
+        }
 
         // Fermer le scanner pour éviter les fuites de ressources
         scanner.close();
