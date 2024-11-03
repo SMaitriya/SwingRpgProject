@@ -17,6 +17,11 @@ public class Mage extends Character{
     }
 
 
+    @Override
+    public String getResource() {
+        return mana + " mana";
+    }
+
 
 
 
@@ -25,9 +30,10 @@ public class Mage extends Character{
     public void specialAttack(Destructible target) {
         if (this.mana >= 10) { // Vérifie si le mage a assez de mana
             this.mana -= 10;
-            double specialDamage = 30; // Dégâts de l'attaque spéciale
+            double specialDamage = 25; // Dégâts de l'attaque spéciale
+            System.out.println(getName() + " uses frostbolt and deals " + specialDamage + " damages!");
+
             target.hit(specialDamage);
-            System.out.println(getName() + " uses frostbotl and deals " + specialDamage + " damages!");
         } else {
             System.out.println(getName() + " doesn't have enough mana");
         }

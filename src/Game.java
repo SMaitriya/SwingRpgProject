@@ -1,5 +1,7 @@
 import Armes.Weapon;
 import Armes.WeaponStore;
+import Destroy.Monster;
+import Map.Combat;
 import Map.GameMap;
 import Personnage.Archer;
 import Personnage.Character;
@@ -23,7 +25,7 @@ public class Game {
         System.out.println("You have chosen the name: " + name);
 
         // Obtenir la liste des classes de personnages disponibles
-        List<Character> characterClasses = Classes.getClasses(); // Correction du nom de méthode
+        List<Character> characterClasses = Classes.getClasses();
 
         // Appeler la méthode pour afficher les classes
         Classes.printClasses(characterClasses);
@@ -35,11 +37,11 @@ public class Game {
             if (choice >= 0 && choice < characterClasses.size()) {
                 Character selectedCharacter = characterClasses.get(choice);
                 if (selectedCharacter instanceof Warrior) {
-                    chosenCharacter = new Warrior(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 50); // Exemple d'or
+                    chosenCharacter = new Warrior(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 40); // Exemple d'or
                 } else if (selectedCharacter instanceof Mage) {
-                    chosenCharacter = new Mage(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 100); // Exemple d'or
+                    chosenCharacter = new Mage(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 30); // Exemple d'or
                 } else if (selectedCharacter instanceof Archer) {
-                    chosenCharacter = new Archer(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 10); // Exemple d'or
+                    chosenCharacter = new Archer(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 4); // Exemple d'or
                 }
             } else {
                 System.out.println("Invalid choice, please try again.");
@@ -109,6 +111,11 @@ public class Game {
             String currentTile = gameMap.getCurrentTile();
             if (currentTile.equals("M")) {
                 System.out.println("You encountered a monster!");
+                Monster monster = new Monster();
+                Combat combat = new Combat();
+                combat.startCombat(chosenCharacter, monster);
+                gameMap.displayMap(); // Afficher la carte après le mouvement
+
 
             } else if (currentTile.equals("O")) {
                 System.out.println("There is an obstacle in the way.");

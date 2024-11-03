@@ -30,11 +30,15 @@ public abstract class Weapon {
         return this.obstacle_damage_ratio;
     }
 
+
     public abstract String asciiArt();
 
-    public void attack(Monster m) {
-        m.hit(this.damage * this.getMonsterDamageRatio());
+    public double attack(Monster m) {
+        double damageDealt = this.damage * this.getMonsterDamageRatio();
+        m.hit(damageDealt); // Inflige les dégâts au monstre
+        return damageDealt; // Retourne les dégâts infligés
     }
+
 
     public void attack(Obstacle o) {
         o.hit(this.damage * this.getObstacleDamageRatio());
@@ -59,6 +63,10 @@ public abstract class Weapon {
 
     public String getName() {
         return this.name;
+    }
+
+    public double getDamage() {
+        return this.damage * this.getMonsterDamageRatio();
     }
 
 

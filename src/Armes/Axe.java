@@ -2,7 +2,7 @@ package Armes;
 
 public class Axe extends Weapon {
 
-    private static final double DAMAGE = 20;
+    private static final double DAMAGE = 15;
     private static final double PRICE = 10;
     private static final String NAME = "Axe";
 

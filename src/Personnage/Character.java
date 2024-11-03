@@ -3,9 +3,6 @@ package Personnage;
 import Armes.Weapon;
 import Destroy.Destructible;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public abstract class Character {
     private String name;
     protected double health;
@@ -84,11 +81,13 @@ public abstract class Character {
 
     @Override
     public String toString() {
-        return  name + " has "+  health + " HP" + " and " + gold + " golds";
+        return  name + " has "+  health + " HP" +  " - " + getResource() +  " -- " + gold + " golds" ;
     }
 
     public abstract void specialAttack(Destructible target);
     public abstract String asciiArt();
+    public abstract String getResource(); // Méthode abstraite pour obtenir le mana, l'énergie ou les flèches
+
 
 
 

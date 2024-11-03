@@ -6,11 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="c29d6441-6d2a-4fd6-b604-4ce56621c3e5" name="Changes" comment="test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Armes/Axe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Armes/Axe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Armes/Crossbow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Armes/Crossbow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Armes/Spellbook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Armes/Spellbook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Armes/Sword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Armes/Sword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Armes/Wand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Armes/Wand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Armes/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Armes/Weapon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Armes/WeaponStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Armes/WeaponStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/GameMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Map/Combat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map/Combat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Personnage/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Personnage/Archer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Personnage/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Personnage/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Personnage/Classes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Personnage/Classes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Personnage/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Personnage/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Personnage/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Personnage/Warrior.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -8,9 +8,9 @@ public class Classes {
     // Méthode pour obtenir la liste des classes de personnages
     public static List<Character> getClasses() {
         List<Character> characters = new ArrayList<>();
-        characters.add(new Warrior("", 100, "Warrior", 50));
-        characters.add(new Mage("", 80, "Mage", 100));
-        characters.add(new Archer("", 90, "Archer", 10));
+        characters.add(new Warrior("", 100, "Warrior", 30));
+        characters.add(new Mage("", 80, "Mage", 30));
+        characters.add(new Archer("", 90, "Archer", 4));
         return characters;
     }
 

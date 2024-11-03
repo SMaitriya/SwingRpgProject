@@ -1,5 +1,9 @@
+package Map;
+
 import java.util.Scanner;
 import Destroy.Monster;
+import java.util.Random;
+
 import Personnage.Character;
 
 public class Combat {
@@ -18,13 +22,13 @@ public class Combat {
             // Action du joueur
             if (choice == 1) {
                 // Attaque standard avec l'arme équipée
+                System.out.println("You attacked the monster with " + player.getEquippedWeapon().getName() + " and dealt " + player.getEquippedWeapon().getDamage() + " damage!");
                 player.getEquippedWeapon().attack(monster);
-                monster.getDamage(damage);
-                System.out.println("You dealt " + damage + " damage to the monster!");
+
             } else if (choice == 2) {
                 // Attaque spéciale
                 player.specialAttack(monster);
-                System.out.println("You used a special attack!");
+
             } else {
                 System.out.println("Invalid choice. Turn skipped.");
             }
@@ -32,19 +36,27 @@ public class Combat {
             // Vérifier si le monstre est vaincu
             if (monster.getHealth() <= 0) {
                 System.out.println("You defeated the monster!");
+                System.out.println("You get 10 gold !");
+                player.addGold(10);
+
                 break;
             }
 
             // Tour du monstre
+            Random random = new Random();
             System.out.println("\nThe monster attacks!");
-            damage = 10;  // Dégâts fixes pour le monstre
+            damage = 6 + random.nextInt(10);  // 10 correspond à l'écart entre 6 et 15
             player.getDamage(damage);
             System.out.println("The monster dealt " + damage + " damage to you!");
 
             // Vérifier si le joueur est vaincu
             if (player.getHealth() <= 0) {
                 System.out.println("You have been defeated by the monster.");
+                System.out.println("GAME");
+                System.out.println("OVER");
                 break;
+
+
             }
 
             // Afficher l'état de santé actuel de chaque participant

@@ -2,8 +2,8 @@ package Armes;
 
 public class Sword extends Weapon {
 
-    private static final double DAMAGE = 25;
-    private static final double PRICE = 100;
+    private static final double DAMAGE = 20;
+    private static final double PRICE = 50;
     private static final String NAME = "Sword";
 
     private static final double MONSTER_DAMAGE_RATIO = 0.4;
