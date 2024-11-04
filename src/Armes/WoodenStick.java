@@ -2,7 +2,7 @@ package Armes;
 
 public class WoodenStick extends Weapon {
 
-    private static final double DAMAGE = 3;
+    private static final double DAMAGE = 5;
     private static final double PRICE = 3;
     private static final String NAME = "Wooden Stick";
 

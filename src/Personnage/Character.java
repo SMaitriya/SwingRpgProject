@@ -49,6 +49,10 @@ public abstract class Character {
         this.gold += amount;
     }
 
+    public void addHealth(double amount) {
+        this.health += amount;
+    }
+
     public void spendGold(double amount) {
         if (amount <= gold) {
             this.gold -= amount;

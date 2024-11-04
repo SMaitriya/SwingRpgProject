@@ -15,6 +15,8 @@ public class GameMap {
     }
 
     private void initializeMap() {
+        boolean hasShop = false;
+
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[i].length; j++) {
                 if (i == map.length - 1 && j == map[i].length - 1) {
@@ -23,11 +25,28 @@ public class GameMap {
                     referenceMap[i][j] = "M"; // M pour les monstres
                 } else if (Math.random() < 0.1) {
                     referenceMap[i][j] = "O"; // O pour les obstacles
+                } else if (!hasShop && Math.random() < 0.05) {
+                    referenceMap[i][j] = "S"; // S pour le magasin
+                    hasShop = true;
                 } else {
                     referenceMap[i][j] = "."; // . pour un espace vide
                 }
             }
         }
+
+        // Si aucun magasin n'a été placé, en ajouter un aléatoirement
+        if (!hasShop) {
+            placeRandomly("S");
+        }
+    }
+
+    private void placeRandomly(String symbol) {
+        int randomRow, randomCol;
+        do {
+            randomRow = (int) (Math.random() * map.length);
+            randomCol = (int) (Math.random() * map[0].length);
+        } while (!referenceMap[randomRow][randomCol].equals("."));
+        referenceMap[randomRow][randomCol] = symbol;
     }
 
     public void displayMap() {
@@ -55,16 +74,16 @@ public class GameMap {
         System.out.println("Current position before moving: (" + playerX + ", " + playerY + ")");
 
         switch (direction.toLowerCase()) {
-            case "up":
+            case "z":
                 if (playerY > 0) playerY--;
                 break;
-            case "down":
+            case "s":
                 if (playerY < map.length - 1) playerY++;
                 break;
-            case "left":
+            case "q":
                 if (playerX > 0) playerX--;
                 break;
-            case "right":
+            case "d":
                 if (playerX < map[0].length - 1) playerX++;
                 break;
             default:

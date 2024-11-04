@@ -3,7 +3,7 @@ package Personnage;
 import Destroy.Destructible;
 
 public class Warrior extends Character {
-    private static final double SPECIAL_DAMAGE = 15;
+    private static final double SPECIAL_DAMAGE = 16;
     private double energy;
 
     public Warrior(String name, double health, String characterClass, double energy) {

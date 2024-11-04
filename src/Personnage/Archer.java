@@ -3,7 +3,7 @@ package Personnage;
 import Destroy.Destructible;
 
 public class Archer extends Character {
-    private static final double SPECIAL_DAMAGE = 10;
+    private static final double SPECIAL_DAMAGE = 20;
     private double arrows = 10;
 
     public Archer(String name, double health, String characterClass, double arrows) {

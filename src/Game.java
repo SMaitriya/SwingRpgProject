@@ -1,6 +1,7 @@
 import Armes.Weapon;
 import Armes.WeaponStore;
 import Destroy.Monster;
+import Destroy.Obstacle;
 import Map.Combat;
 import Map.GameMap;
 import Personnage.Archer;
@@ -37,18 +38,18 @@ public class Game {
             if (choice >= 0 && choice < characterClasses.size()) {
                 Character selectedCharacter = characterClasses.get(choice);
                 if (selectedCharacter instanceof Warrior) {
-                    chosenCharacter = new Warrior(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 40); // Exemple d'or
+                    chosenCharacter = new Warrior(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 40);
                 } else if (selectedCharacter instanceof Mage) {
-                    chosenCharacter = new Mage(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 30); // Exemple d'or
+                    chosenCharacter = new Mage(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 30);
                 } else if (selectedCharacter instanceof Archer) {
-                    chosenCharacter = new Archer(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 4); // Exemple d'or
+                    chosenCharacter = new Archer(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 4);
                 }
             } else {
                 System.out.println("Invalid choice, please try again.");
             }
         }
 
-        chosenCharacter.addGold(15);
+        chosenCharacter.addGold(20);
 
         // Afficher la classe choisie par le joueur
         System.out.println("\nWelcome to the game " + name + " the " + chosenCharacter.getClass().getSimpleName() + " and you have " + chosenCharacter.getGold() + " golds !");
@@ -90,7 +91,7 @@ public class Game {
 // Boucle de déplacement sur la carte
         String direction;
         while (true) {
-            System.out.print("Enter direction to move (up, down, left, right) or 'exit' to quit: ");
+            System.out.print("Enter direction to move (z, s, q, d) or 'exit' to quit: ");
             direction = scanner.next();
 
             if (direction.equalsIgnoreCase("exit")) {
@@ -119,7 +120,16 @@ public class Game {
 
             } else if (currentTile.equals("O")) {
                 System.out.println("There is an obstacle in the way.");
-                // Logique de gestion des obstacles (à ajouter)
+                Obstacle obstacle = new Obstacle();
+                Combat combat = new Combat();
+                combat.startObstacleCombat(chosenCharacter, obstacle);
+                gameMap.displayMap();
+            }
+                else if (currentTile.equals("S")) {
+                    System.out.println("Welcome to the Weapon Store");
+
+                weaponStore.printWeapons(chosenCharacter);
+
             } else if (currentTile.equals("E")) {
                 System.out.println("Congratulations, you've reached the exit!");
                 break; // Terminer la boucle car le joueur a atteint la sortie

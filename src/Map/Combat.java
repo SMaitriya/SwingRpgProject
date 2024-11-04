@@ -3,6 +3,7 @@ package Map;
 import java.util.Scanner;
 import Destroy.Monster;
 import java.util.Random;
+import Destroy.Obstacle;
 
 import Personnage.Character;
 
@@ -36,9 +37,9 @@ public class Combat {
             // Vérifier si le monstre est vaincu
             if (monster.getHealth() <= 0) {
                 System.out.println("You defeated the monster!");
-                System.out.println("You get 10 gold !");
+                System.out.println("You get 20 hp and 10 gold !");
                 player.addGold(10);
-
+                player.addHealth(20);
                 break;
             }
 
@@ -54,7 +55,9 @@ public class Combat {
                 System.out.println("You have been defeated by the monster.");
                 System.out.println("GAME");
                 System.out.println("OVER");
+                System.exit(0);
                 break;
+
 
 
             }
@@ -64,5 +67,46 @@ public class Combat {
             System.out.println(player);
             System.out.println("Monster has " + monster.getHealth() + " HP left.");
         }
+
+
+        }
+
+    public void startObstacleCombat(Character player, Obstacle obstacle) {
+        System.out.println("You encounter an obstacle: " + obstacle.getClass().getSimpleName() + "!");
+        System.out.println("You need to destroy it to proceed.");
+
+        while (obstacle.getHealth() > 0) {
+            System.out.println("\nChoose an action: 1) Attack  2) Special Attack");
+
+            int choice = scanner.nextInt();
+
+            // Action du joueur
+            if (choice == 1) {
+                // Attaque standard avec l'arme équipée
+                System.out.println("You attacked the obstacle with " + player.getEquippedWeapon().getName() + " and dealt " + player.getEquippedWeapon().getDamage() + " damage!");
+                player.getEquippedWeapon().attack(obstacle);
+
+            } else if (choice == 2) {
+                // Attaque spéciale
+                player.specialAttack(obstacle);
+
+            } else {
+                System.out.println("Invalid choice. Turn skipped.");
+            }
+
+            // Vérifier si l'obstacle est détruit
+            if (obstacle.getHealth() <= 0) {
+                System.out.println("You successfully destroyed the obstacle!");
+                System.out.println("You get 10 hp and 5 gold !");
+                player.addGold(5);
+                player.addHealth(10);
+                break;
+            }
+
+            // Afficher l'état de l'obstacle
+            System.out.println("\nCurrent Status:");
+            System.out.println("Obstacle has " + obstacle.getHealth() + " HP left.");
+        }
+
     }
 }
