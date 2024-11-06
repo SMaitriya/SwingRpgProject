@@ -90,6 +90,7 @@ public class Game {
 // Boucle de déplacement sur la carte
         String direction;
         while (true) {
+            System.out.print("\n(M for Monsters, O for Obstacles , S for Weapon Shop and E for Exit)");
             System.out.print("Enter direction to move (z, s, q, d) or 'exit' to quit: ");
             direction = scanner.next();
 
