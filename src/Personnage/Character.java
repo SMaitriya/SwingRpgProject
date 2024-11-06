@@ -3,6 +3,9 @@ package Personnage;
 import Armes.Weapon;
 import Destroy.Destructible;
 
+import java.util.List;
+import java.util.Scanner;
+
 public abstract class Character {
     private String name;
     protected double health;
@@ -21,7 +24,7 @@ public abstract class Character {
     }
 
     public void buyWeapon(Weapon weapon) {
-        if (this.gold > weapon.getPrice()) {
+        if (this.gold >= weapon.getPrice()) {
             this.spendGold(weapon.getPrice());
             this.setEquippedWeapon(weapon);  // Équipe l'arme après achat
             System.out.println("You have successfully bought: " + weapon.getName());

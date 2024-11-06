@@ -40,6 +40,7 @@ public class Combat {
                 System.out.println("You get 20 hp and 10 gold !");
                 player.addGold(10);
                 player.addHealth(20);
+                System.out.println(player);
                 break;
             }
 
@@ -72,7 +73,7 @@ public class Combat {
         }
 
     public void startObstacleCombat(Character player, Obstacle obstacle) {
-        System.out.println("You encounter an obstacle: " + obstacle.getClass().getSimpleName() + "!");
+        System.out.println("You encounter an obstacle !");
         System.out.println("You need to destroy it to proceed.");
 
         while (obstacle.getHealth() > 0) {
@@ -100,6 +101,8 @@ public class Combat {
                 System.out.println("You get 10 hp and 5 gold !");
                 player.addGold(5);
                 player.addHealth(10);
+                System.out.println(player);
+
                 break;
             }
 

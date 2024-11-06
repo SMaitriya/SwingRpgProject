@@ -9,7 +9,6 @@ import Personnage.Character;
 import Personnage.Mage;
 import Personnage.Warrior;
 import Personnage.Classes;
-
 import java.util.List;
 import java.util.Scanner;
 
@@ -109,6 +108,8 @@ public class Game {
             gameMap.displayMap(); // Afficher la carte après le mouvement
 
             // Vérifier le contenu de la case actuelle
+            // Si il s'agit d'un monstre , un obstacle , du shop ou de la sortie/
+
             String currentTile = gameMap.getCurrentTile();
             if (currentTile.equals("M")) {
                 System.out.println("You encountered a monster!");
@@ -125,10 +126,37 @@ public class Game {
                 combat.startObstacleCombat(chosenCharacter, obstacle);
                 gameMap.displayMap();
             }
-                else if (currentTile.equals("S")) {
-                    System.out.println("Welcome to the Weapon Store");
-
+            else if (currentTile.equals("S")) {
+                System.out.println("Welcome to the Weapon Store");
                 weaponStore.printWeapons(chosenCharacter);
+                System.out.print("You have " + chosenCharacter.getGold() + " gold");
+                System.out.print("\nEnter the number of the weapon you want to buy or 'e' to exit: ");
+
+                String input = scanner.next();  // Lire l'entrée en tant que String
+
+                if (input.equalsIgnoreCase("e")) {
+                    System.out.println("Have a nice day!");
+                    gameMap.displayMap(); // Afficher la carte après le mouvement
+
+
+                } else {
+                    try {
+                        int weaponChoice = Integer.parseInt(input);  // Tenter de convertir en entier
+                        if (weaponChoice >= 0 && weaponChoice < weaponStore.getWeaponsForClass(chosenCharacter).size()) {
+                            Weapon selectedWeapon = weaponStore.getWeaponsForClass(chosenCharacter).get(weaponChoice);
+                            chosenCharacter.buyWeapon(selectedWeapon);
+                            System.out.print("You have " + chosenCharacter.getGold() + " gold left\n\n");
+                        } else {
+                            System.out.println("Invalid choice.");
+                        }
+                    } catch (NumberFormatException e) {
+                        System.out.println("Invalid input. Please enter a number or 'e' to exit.");
+                    }
+                    gameMap.displayMap(); // Afficher la carte après le mouvement
+
+                }
+
+
 
             } else if (currentTile.equals("E")) {
                 System.out.println("Congratulations, you've reached the exit!");
@@ -136,7 +164,6 @@ public class Game {
             }
         }
 
-        // Fermer le scanner pour éviter les fuites de ressources
         scanner.close();
     }
 }
