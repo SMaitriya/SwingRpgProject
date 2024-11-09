@@ -1,4 +1,4 @@
-package Map;
+package GameCore;
 
 public class GameMap {
     private String[][] map;          // Carte pour affichage

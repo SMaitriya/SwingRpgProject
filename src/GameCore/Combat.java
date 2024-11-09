@@ -1,4 +1,4 @@
-package Map;
+package GameCore;
 
 import java.util.Scanner;
 import Destroy.Monster;
