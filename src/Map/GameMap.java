@@ -29,7 +29,7 @@ public class GameMap {
                     referenceMap[i][j] = "S"; // S pour le magasin
                     hasShop = true;
                 } else {
-                    referenceMap[i][j] = "."; // . pour un espace vide
+                    referenceMap[i][j] = " "; // . pour un espace vide
                 }
             }
         }
