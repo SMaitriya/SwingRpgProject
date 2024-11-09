@@ -1,5 +1,6 @@
 package Personnage;// CharacterCreation.java
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -21,18 +22,23 @@ public class CharacterCreation {
         Character chosenCharacter = null;
         while (chosenCharacter == null) {
             System.out.print("\nEnter the number of your chosen class: ");
-            int choice = scanner.nextInt();
-            if (choice >= 0 && choice < characterClasses.size()) {
-                Character selectedCharacter = characterClasses.get(choice);
-                if (selectedCharacter instanceof Warrior) {
-                    chosenCharacter = new Warrior(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 40);
-                } else if (selectedCharacter instanceof Mage) {
-                    chosenCharacter = new Mage(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 30);
-                } else if (selectedCharacter instanceof Archer) {
-                    chosenCharacter = new Archer(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 4);
+            try {
+                int choice = scanner.nextInt();
+                if (choice >= 0 && choice < characterClasses.size()) {
+                    Character selectedCharacter = characterClasses.get(choice);
+                    if (selectedCharacter instanceof Warrior) {
+                        chosenCharacter = new Warrior(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 40);
+                    } else if (selectedCharacter instanceof Mage) {
+                        chosenCharacter = new Mage(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 30);
+                    } else if (selectedCharacter instanceof Archer) {
+                        chosenCharacter = new Archer(name, selectedCharacter.getHealth(), selectedCharacter.getCharacterClass(), 4);
+                    }
+                } else {
+                    System.out.println("Invalid choice, please try again.");
                 }
-            } else {
-                System.out.println("Invalid choice, please try again.");
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid number.");
+                scanner.nextLine();
             }
         }
 

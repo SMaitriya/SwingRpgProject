@@ -45,7 +45,7 @@ public class Combat {
             // Tour du monstre
             Random random = new Random();
             System.out.println("\nThe monster attacks!");
-            damage = 6 + random.nextInt(10);  // 10 correspond à l'écart entre 6 et 15
+            damage = 8 + random.nextInt(12);
             player.getDamage(damage);
             System.out.println("The monster dealt " + damage + " damage to you!");
 

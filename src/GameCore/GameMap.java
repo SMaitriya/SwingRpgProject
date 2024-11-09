@@ -21,7 +21,7 @@ public class GameMap {
             for (int j = 0; j < map[i].length; j++) {
                 if (i == map.length - 1 && j == map[i].length - 1) {
                     referenceMap[i][j] = "E"; // E pour la sortie
-                } else if (Math.random() < 0.2) {
+                } else if (Math.random() < 0.5) {
                     referenceMap[i][j] = "M"; // M pour les monstres
                 } else if (Math.random() < 0.1) {
                     referenceMap[i][j] = "O"; // O pour les obstacles
@@ -55,20 +55,41 @@ public class GameMap {
             System.out.print(" | ");
             for (int j = 0; j < map[i].length; j++) {
                 if (i == playerY && j == playerX) {
-                    System.out.print("P | "); // Afficher "P" pour la position du joueur
+                    // P pour la position du joueur, couleur bleue
+                    System.out.print("\033[34mP\033[0m | ");
                 } else {
-                    System.out.print(referenceMap[i][j] + " | "); // Afficher le contenu de la carte de référence
+                    String tile = referenceMap[i][j];
+
+                    // Couleurs en fonction du type de case
+                    if (tile.equals("M")) {
+                        // M pour les monstres, couleur rouge
+                        System.out.print("\033[31mM\033[0m | ");
+                    } else if (tile.equals("O")) {
+                        // O pour les obstacles, couleur grise
+                        System.out.print("\033[90mO\033[0m | ");
+                    } else if (tile.equals("E")) {
+                        // E pour la sortie, couleur verte
+                        System.out.print("\033[32mE\033[0m | ");
+                    } else if (tile.equals("S")) {
+                        // S pour le magasin, couleur jaune
+                        System.out.print("\033[33mS\033[0m | ");
+                    } else {
+                        // Pour les espaces vides, sans couleur
+                        System.out.print(tile + " | ");
+                    }
                 }
             }
             System.out.println();
 
             System.out.print("   ");
             for (int j = 0; j < map[0].length; j++) {
-                System.out.print("---"); // Ligne de séparation
+                System.out.print("----"); // Ligne de séparation
             }
             System.out.println();
         }
     }
+
+
 
     public boolean movePlayer(String direction) {
         System.out.println("Current position before moving: (" + playerX + ", " + playerY + ")");

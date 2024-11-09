@@ -8,10 +8,9 @@ import Personnage.Character;
 public class Game {
     public static void main(String[] args) {
 
+        // Création du personnage avec sa classe
         Character chosenCharacter = CharacterCreation.createCharacter();
-
-        // Continuer avec le reste du jeu en utilisant 'chosenCharacter'
-        System.out.println(chosenCharacter.toString());
+        System.out.println(chosenCharacter);
 
         // Création du magasin d'armes
         WeaponStore weaponStore = new WeaponStore();
@@ -20,17 +19,13 @@ public class Game {
         weaponStore.printWeapons(chosenCharacter);
         // Sélection de l'arme pour le personnage
         WeaponSelection.selectWeapon(chosenCharacter, weaponStore);
-
-        // Poursuite du jeu avec le personnage et son arme sélectionnée
-        System.out.println(chosenCharacter.toString());
+        System.out.println(chosenCharacter);
 
         // Création de la map
-
-        GameMap gameMap = new GameMap(5, 5);
+        GameMap gameMap = new GameMap(8, 8);
         gameMap.displayMap();
 
         // Initialisation de la logic
-
         GameLogic gameLogic = new GameLogic(gameMap, chosenCharacter, weaponStore);
 
         // Game Start
