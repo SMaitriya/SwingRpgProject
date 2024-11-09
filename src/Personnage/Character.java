@@ -1,10 +1,6 @@
 package Personnage;
-
 import Armes.Weapon;
 import Destroy.Destructible;
-
-import java.util.List;
-import java.util.Scanner;
 
 public abstract class Character {
     private String name;
@@ -12,7 +8,6 @@ public abstract class Character {
     protected String characterClass;
     private double gold;
     private Weapon equippedWeapon;
-
 
 
     public Character(String name, double health, String characterClass) {
@@ -33,7 +28,6 @@ public abstract class Character {
             System.out.println("You don't have enough gold for " + weapon.getName());
 
         }
-
     }
 
     public Weapon getEquippedWeapon() {

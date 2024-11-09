@@ -1,14 +1,12 @@
 package GameCore;
-
 import java.util.Scanner;
 import Destroy.Monster;
 import java.util.Random;
 import Destroy.Obstacle;
-
 import Personnage.Character;
 
 public class Combat {
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     public void startCombat(Character player, Monster monster) {
         System.out.println("A battle begins with " + monster.getClass().getSimpleName() + "!");
@@ -59,8 +57,6 @@ public class Combat {
                 System.exit(0);
                 break;
 
-
-
             }
 
             // Afficher l'état de santé actuel de chaque participant
@@ -68,9 +64,7 @@ public class Combat {
             System.out.println(player);
             System.out.println("Monster has " + monster.getHealth() + " HP left.");
         }
-
-
-        }
+    }
 
     public void startObstacleCombat(Character player, Obstacle obstacle) {
         System.out.println("You encounter an obstacle !");

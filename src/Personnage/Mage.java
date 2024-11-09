@@ -1,5 +1,4 @@
 package Personnage;
-
 import Destroy.Destructible;
 
 public class Mage extends Character{
@@ -21,10 +20,6 @@ public class Mage extends Character{
     public String getResource() {
         return mana + " mana";
     }
-
-
-
-
 
     @Override
     public void specialAttack(Destructible target) {

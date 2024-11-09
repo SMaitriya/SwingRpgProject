@@ -1,5 +1,4 @@
 package Personnage;
-
 import Destroy.Destructible;
 
 public class Warrior extends Character {
@@ -20,7 +19,6 @@ public class Warrior extends Character {
     public String getResource() {
         return energy + " energy";
     }
-
 
     @Override
     public void specialAttack(Destructible target) {

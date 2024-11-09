@@ -1,11 +1,10 @@
 package Armes;
-
 import java.util.ArrayList;
 import Personnage.Character;
 
 public class WeaponStore {
 
-    private ArrayList<Weapon> weapons;
+    private final ArrayList<Weapon> weapons;
 
     public WeaponStore() {
         this.weapons = new ArrayList<>();

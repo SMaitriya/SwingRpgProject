@@ -8,7 +8,6 @@ public class CharacterCreation {
     public static Character createCharacter() {
         Scanner scanner = new Scanner(System.in);
 
-
         // Demander le nom de l'utilisateur
         System.out.print("Please enter a name for your character: ");
         String name = scanner.nextLine();

@@ -22,9 +22,8 @@ public class GameLogic {
     public void startGame() {
 
         System.out.println("Map initialized. Here is your starting position:");
-
-
         String direction;
+
         while (true) {
             System.out.print("\n(M for Monsters, O for Obstacles , S for Weapon Shop and E for Exit)");
             System.out.print("\nEnter direction to move (z, s, q, d) or 'exit' to quit: ");

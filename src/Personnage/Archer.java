@@ -21,9 +21,6 @@ public class Archer extends Character {
         return arrows + " arrows";
     }
 
-
-
-
     @Override
     public void specialAttack(Destructible target) {
         if (this.arrows > 0) {

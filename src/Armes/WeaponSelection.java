@@ -1,8 +1,5 @@
 package Armes;
-
 import Personnage.Character;
-import Armes.WeaponStore;
-
 import java.util.Scanner;
 
 public class WeaponSelection {

@@ -6,7 +6,6 @@ public abstract class Weapon {
     protected double damage;
     protected double price;
     protected String name;
-
     protected double monster_damage_ratio;
     protected double obstacle_damage_ratio;
 
@@ -41,6 +40,7 @@ public abstract class Weapon {
 
 
     public void attack(Obstacle o) {
+
         o.hit(this.damage * this.getObstacleDamageRatio());
     }
 

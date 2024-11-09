@@ -24,12 +24,16 @@ public class Game {
         // Poursuite du jeu avec le personnage et son arme sélectionnée
         System.out.println(chosenCharacter.toString());
 
+        // Création de la map
 
         GameMap gameMap = new GameMap(5, 5);
         gameMap.displayMap();
 
+        // Initialisation de la logic
+
         GameLogic gameLogic = new GameLogic(gameMap, chosenCharacter, weaponStore);
 
+        // Game Start
         gameLogic.startGame();
     }
 }
