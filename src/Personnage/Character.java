@@ -1,6 +1,9 @@
 package Personnage;
 import Armes.Weapon;
 import Destroy.Destructible;
+import Swing.GamePage;
+
+import javax.swing.*;
 
 public abstract class Character {
     private String name;
@@ -18,17 +21,22 @@ public abstract class Character {
         this.equippedWeapon = null;
     }
 
-    public void buyWeapon(Weapon weapon) {
+    public boolean buyWeapon(Weapon weapon) {
         if (this.gold >= weapon.getPrice()) {
             this.spendGold(weapon.getPrice());
-            this.setEquippedWeapon(weapon);  // Équipe l'arme après achat
+            this.setEquippedWeapon(weapon);
             System.out.println("You have successfully bought: " + weapon.getName());
-        }
-        else {
+            return true; // Achat réussi
+        } else {
             System.out.println("You don't have enough gold for " + weapon.getName());
-
+            JOptionPane.showMessageDialog(null,
+                    "You don't have enough gold for " + weapon.getName() + ".",
+                    "Purchase Failed",
+                    JOptionPane.ERROR_MESSAGE);
+            return false; // Achat échoué
         }
     }
+
 
     public Weapon getEquippedWeapon() {
         return equippedWeapon;

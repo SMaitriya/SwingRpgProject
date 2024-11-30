@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c29d6441-6d2a-4fd6-b604-4ce56621c3e5" name="Changes" comment="test" />
+    <list default="true" id="c29d6441-6d2a-4fd6-b604-4ce56621c3e5" name="Changes" comment="test">
+      <change afterPath="$PROJECT_DIR$/src/GameSwing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Personnage/Hurt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Swing/CharacterCreationPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Swing/GameMapPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Swing/GamePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Swing/ShopPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Swing/WeaponCellRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Armes/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Armes/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Armes/WeaponStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Armes/WeaponStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Personnage/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Personnage/Character.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +40,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/SMaitriya/RPG-PROJECT.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/SMaitriya/SwingRpgProject.git&quot;,
     &quot;accountId&quot;: &quot;85039fa4-b672-4ad7-b158-9417c5ac12b5&quot;
   }
 }</component>
@@ -46,21 +58,31 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Game.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GameSwing.executor&quot;: &quot;Run&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/maitr/Desktop/sorbonne/java/SwingRPGProject&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\maitr\Desktop\sorbonne\java\SwingRPGProject\src\Personnage" />
       <recent name="C:\Users\maitr\Desktop\sorbonne\java\RpgWeaponStore\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Game">
+  <component name="RunManager" selected="Application.GameSwing">
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Game" />
+      <module name="RpgWeaponStore" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameSwing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GameSwing" />
       <module name="RpgWeaponStore" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -75,8 +97,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Game" />
+        <item itemvalue="Application.GameSwing" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Game" />
       </list>
     </recent_temporary>
   </component>
