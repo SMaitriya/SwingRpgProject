@@ -1,5 +1,6 @@
 package Swing;
-
+import java.util.List;
+import java.util.ArrayList;
 import Armes.Weapon;
 import Personnage.Character;
 
@@ -7,10 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GamePage extends JPanel {
-    private Character characterInfo;  // Conformité à la convention de nommage
+    private Character characterInfo;
     private Weapon selectedWeapon;
-
-    // Déclaration des attributs playerX et playerY
     private int playerX;
     private int playerY;
 
@@ -28,13 +27,14 @@ public class GamePage extends JPanel {
 
         // Initialisation du Layout
         setLayout(new BorderLayout());
+        CardLayout cardLayout = new CardLayout();
+        JPanel mainPanel = new JPanel(cardLayout);
 
-        // Exemple d'affichage de l'arme sélectionnée
-        JLabel weaponLabel = new JLabel("Selected Weapon: " + selectedWeapon.getName());
-        this.add(weaponLabel, BorderLayout.NORTH);
+        // Ajouter le panneau de la carte au centre
+        GameMapPanel gameMapPanel = new GameMapPanel(playerX, playerY, characterInfo, cardLayout, mainPanel);
+        add(gameMapPanel, BorderLayout.CENTER);
 
-        // Ajouter le panneau de la carte
-        GameMapPanel gameMapPanel = new GameMapPanel(playerX, playerY);  // Assurez-vous que cette classe existe
-        add(gameMapPanel, BorderLayout.CENTER);  // Pas besoin de re-spécifier BorderLayout.CENTER
+
     }
 }
+

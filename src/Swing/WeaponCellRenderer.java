@@ -8,7 +8,7 @@ public class WeaponCellRenderer extends JLabel implements ListCellRenderer<Weapo
 
     @Override
     public Component getListCellRendererComponent(JList<? extends Weapon> list, Weapon weapon, int index, boolean isSelected, boolean cellHasFocus) {
-        // Créer une chaîne HTML contenant l'art ASCII et les informations de l'arme
+        // Créer une chaîne HTML avec l'art ASCII et les informations de l'arme
         String displayText = "<html><pre>" + weapon.asciiArt() + "</pre>" +
                 "<b>" + weapon.getName() + "</b><br>" +
                 "Damage: " + weapon.getDamage() + "<br>" +
@@ -18,7 +18,7 @@ public class WeaponCellRenderer extends JLabel implements ListCellRenderer<Weapo
         // Afficher le texte de l'arme
         setText(displayText);
 
-        // Appliquer un fond coloré si l'élément est sélectionné
+        // Appliquer une couleur de fond différente si l'élément est sélectionné
         if (isSelected) {
             setBackground(Color.LIGHT_GRAY);
             setForeground(Color.BLACK);
@@ -26,8 +26,8 @@ public class WeaponCellRenderer extends JLabel implements ListCellRenderer<Weapo
             setBackground(Color.WHITE);
             setForeground(Color.BLACK);
         }
-        setOpaque(true);
+        setOpaque(true);  // Assurer que le fond est visible
 
-        return this;
+        return this;  // Retourner le composant avec le rendu personnalisé
     }
 }

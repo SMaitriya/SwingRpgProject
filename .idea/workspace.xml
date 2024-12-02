@@ -5,17 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c29d6441-6d2a-4fd6-b604-4ce56621c3e5" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/src/GameSwing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Personnage/Hurt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Swing/CharacterCreationPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Swing/GameMapPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Swing/GamePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Swing/ShopPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Swing/WeaponCellRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Album/1601.m10.i311.n029.S.c10.164511620 Seamless green grass vector pattern.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Album/2110.w032.n003.136B.p1.136.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Album/2111.w032.n003.190B.p1.190.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Album/Minotaur_03_Taunt_000.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Album/end.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Album/store.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Swing/MapStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Armes/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Armes/Weapon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Armes/WeaponStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Armes/WeaponStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameSwing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameSwing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Personnage/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Personnage/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Personnage/Hurt.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Album/Hurt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/CharacterCreationPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/CharacterCreationPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/GameMapPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/GameMapPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/GamePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/GamePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/ShopPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/ShopPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Swing/WeaponCellRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Swing/WeaponCellRenderer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +75,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\maitr\Desktop\sorbonne\java\SwingRPGProject\src\Album" />
       <recent name="C:\Users\maitr\Desktop\sorbonne\java\SwingRPGProject\src\Personnage" />
       <recent name="C:\Users\maitr\Desktop\sorbonne\java\RpgWeaponStore\src" />
     </key>

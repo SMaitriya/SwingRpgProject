@@ -13,7 +13,7 @@ public class CharacterCreationPanel extends JPanel {
     private JComboBox<String> classComboBox;
     private List<Character> characterClasses;
     private Character createdCharacter;
-    private JLabel characterGoldLabel;  // Nouveau label pour afficher l'or du personnage
+    private JLabel characterGoldLabel;  // Afficher l'or du personnage
 
     public CharacterCreationPanel(List<Character> characterClasses) {
         this.characterClasses = characterClasses;
@@ -23,20 +23,18 @@ public class CharacterCreationPanel extends JPanel {
     private void setupUI() {
         setBackground(Color.BLACK);
 
-
-        // Champ pour le nom
+        // Champ pour entrer le nom du personnage
         JLabel nameLabel = new JLabel("Enter your character name:");
         nameLabel.setForeground(Color.WHITE);
         nameField = new JTextField();
-        nameField.setPreferredSize(new Dimension(100, 20));
-
-        nameField.setBackground(Color.BLUE);
-        nameField.setForeground(Color.RED);
+        nameField.setPreferredSize(new Dimension(100, 25));
+        nameField.setBackground(Color.WHITE);
+        nameField.setFont(new Font("Arial", Font.BOLD, 12));
+        nameField.setForeground(Color.BLACK);
         add(nameLabel);
         add(nameField);
 
-
-        // ComboBox pour la classe
+        // ComboBox pour sélectionner la classe
         JLabel classLabel = new JLabel("Select your class:");
         classLabel.setForeground(Color.WHITE);
         classComboBox = new JComboBox<>();
@@ -45,9 +43,6 @@ public class CharacterCreationPanel extends JPanel {
         }
         add(classLabel);
         add(classComboBox);
-
-
-
     }
 
     public String getNameField() {
@@ -96,7 +91,7 @@ public class CharacterCreationPanel extends JPanel {
         }
 
         if (createdCharacter != null) {
-            createdCharacter.addGold(20); // Ajouter de l'or au personnage créé
+            createdCharacter.addGold(20); // Ajouter de l'or au personnage
         }
 
         return createdCharacter;
